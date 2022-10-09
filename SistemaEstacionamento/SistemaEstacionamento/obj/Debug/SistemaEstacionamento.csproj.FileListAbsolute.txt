@@ -1,0 +1,8 @@
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\bin\Debug\SistemaEstacionamento.exe.config
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\bin\Debug\SistemaEstacionamento.exe
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\bin\Debug\SistemaEstacionamento.pdb
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\obj\Debug\SistemaEstacionamento.csproj.AssemblyReference.cache
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\obj\Debug\SistemaEstacionamento.csproj.SuggestedBindingRedirects.cache
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\obj\Debug\SistemaEstacionamento.csproj.CoreCompileInputs.cache
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\obj\Debug\SistemaEstacionamento.exe
+C:\Users\And\Desktop\desafios\SistemaEstacionamento\SistemaEstacionamento\obj\Debug\SistemaEstacionamento.pdb
