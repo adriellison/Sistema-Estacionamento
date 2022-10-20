@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaEstacionamento.Service;
+using SistemaEstacionamento.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,21 +23,18 @@ namespace SistemaEstacionamento.Models
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string placa = Console.ReadLine();
 
-            veiculos.Add(placa);
+            veiculos.Add(placa.ToUpper());
         }
 
         public void RemoverVeiculo()
         {
-            Console.WriteLine("Digite a placa do veículo para remover:");
-
-            string placa = Console.ReadLine();
+            string placa = EstacionamentoView.RemoverVeiculoView();
 
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
-                Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                int horas = EstacionamentoView.TempoEstacionadoView();
 
-                int horas = Convert.ToInt32(Console.ReadLine());
-                decimal valorTotal = precoInicial + precoPorHora * horas;
+                decimal valorTotal = CalculoValores.ValorDoTempoEstacionado(precoInicial, precoPorHora, horas);
 
                 veiculos.Remove(placa);
 

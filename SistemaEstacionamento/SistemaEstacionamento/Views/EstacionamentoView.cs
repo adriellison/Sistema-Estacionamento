@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SistemaEstacionamento.Views
 {
-    public class EstacionamentoView
+    public static class EstacionamentoView
     {
-        public Taxas CadastrarValoresView(Taxas taxas)
+        public static Taxas CadastrarValoresView(Taxas taxas)
         {
             Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
             Console.WriteLine("Digite o preço inicial:");
@@ -21,7 +21,22 @@ namespace SistemaEstacionamento.Views
             return taxas;
         }
 
-        public void MenuPrincipal()
+        public static string RemoverVeiculoView()
+        {
+            Console.WriteLine("Digite a placa do veículo para remover:");
+            string placa = Console.ReadLine();
+            return placa;
+        }
+
+        public static int TempoEstacionadoView()
+        {
+            Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+            int horas = Convert.ToInt32(Console.ReadLine());
+
+            return horas;
+        }
+
+        public static void MenuPrincipal()
         {
 
         }
