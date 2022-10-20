@@ -11,14 +11,7 @@ namespace SistemaEstacionamento
 
             decimal precoInicial = 0;
             decimal precoPorHora = 0;
-
-            Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
-            Console.WriteLine("Digite o preço inicial:");
-            precoInicial = Convert.ToDecimal(Console.ReadLine());
-
-            Console.WriteLine("Agora digite o preço por hora:");
-            precoPorHora = Convert.ToDecimal(Console.ReadLine());
-
+            
             Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
 
             string opcao = string.Empty;
