@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SistemaEstacionamento.Models
+﻿namespace SistemaEstacionamento.Models
 {
     public class Veiculo
     {
@@ -13,5 +7,10 @@ namespace SistemaEstacionamento.Models
         public string Placa { get; set; }
 
         public string Cor { get; set; }
+
+        public override string ToString()
+        {
+            return $"Tipo: {Tipo}\nPlaca: {Placa}\nCor: {Cor}\n";
+        }
     }
 }

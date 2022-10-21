@@ -1,17 +1,15 @@
 ﻿using SistemaEstacionamento.Models;
+using SistemaEstacionamento.Service;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaEstacionamento.Views
 {
-    public static class EstacionamentoView
+    public class EstacionamentoView
     {
-        public static Taxas CadastrarValoresView(Taxas taxas)
+        public Taxas CadastrarValoresView(Taxas taxas)
         {
             Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
+            
             Console.WriteLine("Digite o preço inicial:");
             taxas.PrecoInicial = Convert.ToDecimal(Console.ReadLine());
 
@@ -21,14 +19,15 @@ namespace SistemaEstacionamento.Views
             return taxas;
         }
 
-        public static string RemoverVeiculoView()
+        public string RemoverVeiculoView()
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
             string placa = Console.ReadLine();
+
             return placa;
         }
 
-        public static int TempoEstacionadoView()
+        public int TempoEstacionadoView()
         {
             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
             int horas = Convert.ToInt32(Console.ReadLine());
@@ -36,9 +35,20 @@ namespace SistemaEstacionamento.Views
             return horas;
         }
 
-        public static void MenuPrincipal()
+        public Veiculo AdicionarVeiculoView()
         {
+            Veiculo veiculo = new Veiculo();
 
+            Console.WriteLine("Digite o tipo do veículo: ");
+            veiculo.Tipo = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Digite a placa do veículo para estacionar:");
+            veiculo.Placa = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Digite a cor do veículo");
+            veiculo.Cor = Console.ReadLine().ToUpper();
+
+            return veiculo;
         }
     }
 }

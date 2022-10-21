@@ -1,20 +1,29 @@
-﻿using SistemaEstacionamento.Models;
+﻿using SistemaEstacionamento.Controller;
+using SistemaEstacionamento.Models;
+using SistemaEstacionamento.Service;
+using SistemaEstacionamento.Views;
 using System;
 
 namespace SistemaEstacionamento
 {
-    public class Program
+    public class Principal
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            decimal precoInicial = 0;
-            decimal precoPorHora = 0;
-            
-            Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
+            Taxas taxas = new Taxas();
 
-            string opcao = string.Empty;
+            Estacionamento e = new Estacionamento();
+
+            EstacionamentoView ev = new EstacionamentoView();
+
+            taxas = ev.CadastrarValoresView(taxas);
+            
+            EstacionamentoService es = new EstacionamentoService(e, ev);
+
+            EstacionamentoController controller = new EstacionamentoController(es);
+
             bool exibirMenu = true;
 
             while (exibirMenu)
@@ -29,21 +38,17 @@ namespace SistemaEstacionamento
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        es.AdicionarVeiculo();
+                        controller.AdicionarVeiculo();
                         break;
-
                     case "2":
-                        es.RemoverVeiculo();
+                        controller.RemoverVeiculo(taxas);
                         break;
-
                     case "3":
-                        es.ListarVeiculos();
+                        controller.ListarVeiculos();
                         break;
-
                     case "4":
                         exibirMenu = false;
                         break;
-
                     default:
                         Console.WriteLine("Opção inválida");
                         break;
@@ -53,7 +58,7 @@ namespace SistemaEstacionamento
                 Console.ReadLine();
             }
 
-            Console.WriteLine("O programa se encerrou");
+            Console.WriteLine("O programa foi encerrado");
         }
     }
 }
